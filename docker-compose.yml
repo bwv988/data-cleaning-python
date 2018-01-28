@@ -1,8 +1,18 @@
-# Run DB backend.
+# Run evrything ;)
 
 version: "2"
 
 services:
+  anaconda3:
+    image: continuumio/anaconda3
+    container_name: anaconda3
+    command: /opt/conda/bin/jupyter notebook --notebook-dir=/workdir --ip='*' --port=8888 --allow-root --NotebookApp.token=''
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./src/poc:/workdir
+      - ./data:/data
+  
   db:
     image: postgres
     container_name: db

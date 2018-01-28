@@ -1,5 +1,5 @@
 """
-warehouse.py - Ingest data into Data Warehouse.
+pipeline.py - Data cleaning and ingestion pipeline with Luigi.
 """
 
 import luigi
@@ -7,16 +7,20 @@ import luigi
 from luigi.mock import MockTarget 
 
 class LoadData(luigi.Task):
+    """
+    This task loads the data.
+    """
     def output(self):
         return MockTarget("LoadData", 
             mirror_on_stderr=True)
  
     def run(self):
-        _write = self.output().open('w')
-        _write.write(u"Loading of data completed.\n")
-        _write.close()
+        pass
 
-class CleanData(luigi.Task): 
+class CleanData(luigi.Task):
+    """
+    This task defines business logic to clean the data.
+    """
     def requires(self):
         return LoadData()
 
@@ -25,16 +29,12 @@ class CleanData(luigi.Task):
             mirror_on_stderr=True)
     
     def run(self):
-        _read = self.input().open("r")
-        _write = self.output().open('w')
-        for first_ends in _read:
-            outval = u"Second Task after "+first_ends+u"\n"
-            _write.write(outval)
-        
-        _write.close()
-        _read.close()
+        pass
 
 class IngestData(luigi.Task):
+    """
+    Runs logic to ingest data into data warehouse.
+    """
     def requires(self):
         return CleanData()
 
