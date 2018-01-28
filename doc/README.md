@@ -1,0 +1,1 @@
+This folder contains some notes, links and additional info.

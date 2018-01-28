@@ -1,0 +1,29 @@
+# Run DB backend.
+
+version: "2"
+
+services:
+  db:
+    image: postgres
+    container_name: db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+
+  dbadmin:
+    image: fenglc/pgadmin4
+    container_name: dbadmin
+    depends_on:
+      - db
+    ports:
+      - 5050:5050
+    environment:
+      - DEFAULT_USER=admin
+      - DEFAULT_PASSWORD=admin    
+
+volumes:
+  pgdata:
+    external: true
