@@ -1,7 +1,8 @@
 """
 data_cleaner.py - Data cleaning and validation module.
+
+This should be invoked as a Luigi task.
 """
-import luigi
 
 from lib import airlines, airports, routes
 

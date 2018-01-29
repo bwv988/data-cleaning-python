@@ -1,0 +1,13 @@
+name: airhouse
+summary: Quick Juju app.
+maintainer: Ralph Schlosser <ralph.schlosser@gmail.com>
+description: |
+  <Multi-line description here>
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - misc
+subordinate: false
+provides:
+  website:
+    interface: http

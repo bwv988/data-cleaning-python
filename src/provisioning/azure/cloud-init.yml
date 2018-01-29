@@ -1,0 +1,21 @@
+# Config file for cloud-init.
+
+package_upgrade: true
+packages:
+- docker.io
+
+write_files:
+  - owner: azureuser:azureuser
+  - path: /home/azureuser/.screenrc
+  - content: |
+      startup_message off
+      vbell off
+      hardstatus alwayslastline
+      hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}]%{=y C}[%d/%m %c]%{W}'
+runcmd:
+  - usermod -aG docker azureuser
+  - docker pull continuumio/anaconda3
+  - docker pull postgres
+  - docker pull fenglc/pgadmin4
+  - curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+  - chmod +x /usr/local/bin/docker-compose

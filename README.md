@@ -29,6 +29,15 @@ Quick PoC for data cleaning / ingestion using Python.
 * Data Pipelines: https://www.slideshare.net/InfoQ/building-data-pipelines-in-python
 
 ### Luigi
+
 * http://luigi.readthedocs.io/en/stable/
 * https://www.slideshare.net/erikbern/luigi-presentation-nyc-data-science
 * https://github.com/groupon/luigi-warehouse
+
+### Other
+
+Delete dangling images:
+
+```bash
+docker rmi $(docker images --quiet --filter "dangling=true")
+```

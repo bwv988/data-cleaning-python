@@ -1,5 +1,8 @@
 # Custom
 processed/
+.azure/
+.ssh/
+.bash_history
 
 # Node.js
 node_modules/
