@@ -7,15 +7,16 @@ Quick PoC for data cleaning / ingestion using Python.
 ## PoC Implementation notes:
 
 * Data cleaning / processing using Pandas.
-* Data pipeline implementation base: Luigi.
+* Data pipeline implementation (sketch): Luigi.
 * Use of Postgres SQL for DB / data warehouse test.
-* Canonical Juju for cloud-agnostic provisioning.
+* Azure cloud-init-based bootstrapping.
 
 ## Improvement Ideas
 
 * Consider implementing Amazon Redshift or Apache Ignite for more scalable Data Warehouse.
     * Choice of exact technology depends largely on functional and non-functional requirements.
 * Evaluate best-practices for Data Pipelines, e.g. as demonstrated here: https://github.com/groupon/luigi-warehouse
+* Canonical Juju for cloud-agnostic provisioning.
 
 ## Limitations
 

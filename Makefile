@@ -1,4 +1,4 @@
-# Makefile for the project.
+# Makefile for running the project containers.
 
 setup:
 	# Create a persistent volume for the DB.

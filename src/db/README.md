@@ -2,7 +2,11 @@
 
 This folder contains files to do with the Database.
 
-For simplicity, I'm using containerized versions of Postgres and `pgadmin`.
+For simplicity and brevity, I'm using containerized versions of Postgres and `pgadmin`.
+
+In a production-grade setup with analytical BI query needs, a proper data warehouse, e.g. Amazon RedShift or Apache Ignite with replication / backup should be considered. 
+
+Also we'd need a well-defined table structure based on access patterns in addition to proper data schemas.
 
 ## Setup
 
@@ -14,10 +18,11 @@ For simplicity, I'm using containerized versions of Postgres and `pgadmin`.
 * Source Bash alias file: `$ source ./aliases.sh`.
 * Create DB:
     * `$ createdb -U postgres airlines_data`
-* Start DB & `pgadmin` containers: `$ docker-compose up`
+* Start DB & `pgadmin` containers: 
+    * `$ docker-compose up`
 
 
-* Now navigate to http://localhost:5s050/browser/ to access `pgadmin`.
+* Now navigate to http://localhost:5050/browser/ to access `pgadmin`.
     * Use `admin / admin` as credentials.
 
 * Add a new server in `pgadmin`:
@@ -69,6 +74,7 @@ select * from airports where "Airport City" like '%London' and "Airport Country"
 
 select * from airports a join routes r on a."Airport ID"=r."Destination Airport ID" where a."Airport ID"=492
 
+-- How many routes do we have out of London, UK?
 select count(*) from airports a 
 	join routes r on a."Airport ID" = r."Source Airport ID" 
 	where a."Airport ID" in

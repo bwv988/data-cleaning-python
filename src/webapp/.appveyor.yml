@@ -1,0 +1,17 @@
+environment:
+  nodejs_version: "9"
+  NODE_ENV: production
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - yarn install
+  - yarn global add gulp
+
+build_script:
+  - gulp build
+
+test_script:
+  - yarn test
+
+cache:
+  - "%LOCALAPPDATA%\\Yarn"

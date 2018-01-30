@@ -528,7 +528,6 @@ most_routes_id = airline_ids_into_jfk.value_counts().index[0]
 
 ## Look up name.
 ## RES: Delta Airlines.
-print(airlines[airlines["Airline ID"] == most_routes_id])
-
+print(airlines[airlines["Airline ID"] == most_routes_id]["Airline Name"])
 
 
