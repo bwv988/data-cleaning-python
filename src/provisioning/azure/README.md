@@ -28,10 +28,11 @@ With the server IP address from above:
 azssh azureuser@<SERVER IP ADDRESS>
 ```
 
-## Expose port for Jupyter Notebook
+## Expose ports for Jupyter Notebook & pgadmin
 
 ```bash
 az vm open-port --resource-group data_cleaning --name warehouse --port 8888
+az vm open-port --resource-group data_cleaning --name warehouse --port 5050 --priority 800
 ```
 
 ## Destroy VM
