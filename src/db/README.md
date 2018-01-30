@@ -56,7 +56,7 @@ psql
 \dS+ routes
 ```
 
-## Create / Drop databas
+## Create / drop database
 
 ```bash
 # Drop
@@ -69,9 +69,10 @@ createdb -U postgres airlines_data
 ## Queries
 
 ```sql
+-- Get all London Airports.
 select * from airports where "Airport City" like '%London' and "Airport Country" like '%United Kingdom'
 
-
+-- Get all London Airport IDs.
 select * from airports a join routes r on a."Airport ID"=r."Destination Airport ID" where a."Airport ID"=492
 
 -- How many routes do we have out of London, UK?

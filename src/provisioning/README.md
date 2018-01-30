@@ -1,7 +1,5 @@
-This directory contains files related to provisioning the data cleaning project.
+# Provisioning
 
-## List of required installs
+See further notes in `azure/` sub-folder.
 
-
-* Anaconda: https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
-* Docker
+Juju-based implementation not further developed.
