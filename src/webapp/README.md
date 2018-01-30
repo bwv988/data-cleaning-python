@@ -1,6 +1,8 @@
-# The Web Application
+# Web Application
 
 Based on this amazing template: https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate
+
+UNFINISHED
 
 ## Description
 

@@ -1,12 +1,12 @@
 # Database
 
-This folder contains files to do with the Database.
+This folder holds files to do with the Database.
 
 For simplicity and brevity, I'm using containerized versions of Postgres and `pgadmin`.
 
-In a production-grade setup with analytical BI query needs, a proper data warehouse, e.g. Amazon RedShift or Apache Ignite with replication / backup should be considered. 
+In a production-grade setup with analytical BI query needs, a proper data warehouse, e.g. Amazon RedShift or Apache Ignite with replication / backup should be considered.
 
-Also we'd need a well-defined table structure based on access patterns in addition to proper data schemas.
+Also, we'd need a well-defined table structure based on access patterns in addition to proper data schemas.
 
 ## Setup
 
@@ -16,10 +16,10 @@ Also we'd need a well-defined table structure based on access patterns in additi
 ## Usage
 
 * Source Bash alias file: `$ source ./aliases.sh`.
-* Create DB:
-    * `$ createdb -U postgres airlines_data`
 * Start DB & `pgadmin` containers: 
     * `$ docker-compose up`
+* Create DB:
+    * `$ createdb -U postgres airlines_data`
 
 
 * Now navigate to http://localhost:5050/browser/ to access `pgadmin`.

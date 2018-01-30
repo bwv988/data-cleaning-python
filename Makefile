@@ -1,7 +1,7 @@
 # Makefile for running the project containers.
+all: clean
 
 setup:
-	# Create a persistent volume for the DB.
 	docker volume create --name pgdata
 	
 clean:
