@@ -1,5 +1,7 @@
 # Web Application
 
+REMOVED
+
 Based on this amazing template: https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate
 
 UNFINISHED
